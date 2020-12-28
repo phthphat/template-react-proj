@@ -1,5 +1,6 @@
 import React from 'react';
 import './not-found.css';
+
 interface Props {
 
 };

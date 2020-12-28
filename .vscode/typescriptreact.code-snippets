@@ -1,0 +1,26 @@
+{
+  "Function component with base props": {
+    "prefix": "ctfc", //custom typescript function component
+    "body": [
+      "import React from 'react'",
+      "import './$TM_FILENAME_BASE.css'",
+      "",
+      "interface Props extends BaseProps$0 {",
+      "}",
+      "",
+      "const $TM_FILENAME_BASE: React.FC<Props> = React.memo((props) => {",
+      "  return <div className={combineCN(props.className, \"\")}",
+      "    id={props.id}",
+      "    style={props.style}",
+      "  >",
+      "  ",
+      "    {props.children}",
+      "  </div>",
+      "})",
+      "",
+      "export default $TM_FILENAME_BASE"
+    ],
+    "description": "Create React function component with Base Props",
+    "scope": "typescriptreact"
+  }
+}
