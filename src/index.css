@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 code {
@@ -32,4 +33,14 @@ article {
 input,
 button {
   outline: none;
+  border: solid gray 1px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+button:active {
+  color: white;
+}
+button:hover {
+  background-color: rgb(221, 221, 221);
 }

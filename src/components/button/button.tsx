@@ -7,13 +7,11 @@ interface Props extends BaseProps {
 }
 
 const Button: React.FC<Props> = React.memo((props) => {
-  let onClickCallBack = props.onClick ? useCallback(props.onClick, []) : undefined
   console.log("Button rendered")
 
   return <button
     id={props.id}
-    className={combineCN(props.className, "button")}
-    onClick={onClickCallBack}
+    onClick={props.onClick}
     style={props.style}>
     Click me!
     {props.children}
