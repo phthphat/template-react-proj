@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { BaseProps } from '../../../helper/base-props'
 import { combineCN } from '../../../helper/combine-class'
 import siteInfo from '../../../site-info.json'
-import './common-layout.css'
+import './common-layout.scss'
 
 interface Props extends BaseProps {
   title?: string

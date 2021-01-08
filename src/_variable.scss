@@ -1,0 +1,13 @@
+$white: rgb(245, 245, 245);
+$black: rgb(36, 36, 36);
+:root {
+  --text-color: #{$black};
+  --bg-color: #{$white};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #{$white};
+    --bg-color: #{$black};
+  }
+}

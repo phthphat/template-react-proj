@@ -1,7 +1,7 @@
 import React from 'react'
 import { BaseProps } from '../../helper/base-props'
 import { combineCN } from '../../helper/combine-class'
-import './button.css'
+import './button.scss'
 interface Props extends BaseProps {
   onClick?: () => void
 }
