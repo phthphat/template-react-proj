@@ -40,7 +40,7 @@ export const UserReducer = (
             let existItems = newState.cart
             let payload = action.payload
             let existIndex = existItems.findIndex(val => { return val.id === payload.itemId })
-            if (existIndex != -1) {
+            if (existIndex !== -1) {
                 //mean exist
                 console.log(`quantity ${existItems[existIndex].quantity}`)
                 let oldQuantity = existItems[existIndex].quantity
@@ -71,7 +71,7 @@ export const UserReducer = (
             let id = action.payload.productId
             let firstIndex = newState.cart.findIndex(val => { return val.id === id })
             console.log(`firstindex: ${firstIndex}`)
-            if (firstIndex != -1) {
+            if (firstIndex !== -1) {
                 newState.cart.splice(firstIndex, 1)
             }
             localStorage["cart"] = JSON.stringify(newState.cart)
