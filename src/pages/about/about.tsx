@@ -1,6 +1,6 @@
 import React from 'react'
 import { BaseProps } from '../../helper/base-props'
-import { combineCN } from '../../helper/combine-class-name'
+import { combineCN } from '../../helper/combine-classname'
 import './about.css'
 
 interface Props extends BaseProps {

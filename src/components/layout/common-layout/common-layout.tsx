@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { BaseProps } from '../../../helper/base-props'
-import { combineCN } from '../../../helper/combine-class-name'
+import { combineCN } from '../../../helper/combine-classname'
 import siteInfo from '../../../site-info.json'
 import './common-layout.scss'
 
