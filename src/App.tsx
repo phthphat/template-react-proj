@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { useSetRecoilState } from 'recoil';
 import Footer from './components/footer/footer';
 import Nav from './components/nav/nav';
-import { Homepage } from './pages/homepage/home-page';
+import { getLocalStorage, setLocalStorage } from './helper/local-storage';
+import { Homepage } from './pages/homepage/homepage';
 import { NotFound } from './pages/not-found/not-found';
-import { AppProvider } from './redux/app/appContext';
+import { cartState, themeState } from './state/user-state';
 
 const App = () => {
+
+  let setTheme = useSetRecoilState(themeState)
+  let setCart = useSetRecoilState(cartState)
+
+  useEffect(() => {
+    let curTheme = getLocalStorage("theme")
+    let curCart = getLocalStorage("cart")
+
+    if (!curTheme) {
+      curTheme = "light"
+      setLocalStorage("theme", "light")
+    }
+    setTheme(curTheme)
+
+    if (!curCart) {
+      curCart = []
+      setLocalStorage("cart", [])
+    }
+    setCart(curCart)
+
+  }, [setTheme, setCart])
+
   return (
-    <AppProvider>
+    <>
       <Nav />
       <BrowserRouter>
         <Switch>
@@ -17,7 +41,7 @@ const App = () => {
         </Switch>
       </BrowserRouter>
       <Footer />
-    </AppProvider>
+    </>
   );
 }
 
