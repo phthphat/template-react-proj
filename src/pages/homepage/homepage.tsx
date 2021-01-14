@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { useSetRecoilState } from 'recoil'
 import Button from '../../components/button/button'
 import CommonLayout from '../../components/layout/common-layout/common-layout'
@@ -9,7 +9,6 @@ export const Homepage = React.memo(() => {
 
   const setCount = useSetRecoilState(countState)
   console.log("Homepage rendered")
-
 
   return <CommonLayout title="Homepage">
     <div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRecoilValue } from 'recoil'
 import { BaseProps } from '../../helper/base-props'
-import { combineCN } from '../../helper/combine-class'
+import { combineCN } from '../../helper/combine-class-name'
 import { countState } from '../../state/user-state'
 import './nav.scss'
 

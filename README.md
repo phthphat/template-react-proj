@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Work with Visual Studio Code
 
+## Visual Studio Code
+
+- Press `F5` / `Shift + F5` to debug / stop (using `yarn start`)
+
 ## Available Scripts
 
 In the project directory, you can run:

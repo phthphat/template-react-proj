@@ -3,8 +3,9 @@ export const getLocalStorage = <T extends unknown>(key: string): T | any | undef
   if (!rawVal) {
     return rawVal
   } else {
-
-    if (typeof rawVal == 'string')
+    if (
+      ['string', 'bigint', 'number', 'boolean'].includes(typeof rawVal)
+    )
       return rawVal
 
     return JSON.parse(rawVal)

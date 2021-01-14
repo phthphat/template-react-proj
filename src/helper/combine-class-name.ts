@@ -1,5 +1,5 @@
 /**
- * Combine name of className list to white space
+ * Return string of className list seperated by white space
  * @param classes className list
  */
 export const combineCN = (
