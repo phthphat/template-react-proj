@@ -11,7 +11,7 @@ const Footer: React.FC<Props> = React.memo((props) => {
     id={style.footer}
     style={props.style}
   >
-
+    <label className={style.item}>P</label>
     {props.children}
   </footer>
 })
