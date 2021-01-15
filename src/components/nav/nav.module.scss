@@ -1,4 +1,4 @@
-#nav-bar {
+#navBar {
   background-color: red;
   height: 50px;
   position: sticky;
@@ -6,4 +6,11 @@
   left: 0;
   width: 100vw;
   z-index: 5;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  padding: 5px;
 }

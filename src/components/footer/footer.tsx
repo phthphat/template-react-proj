@@ -1,19 +1,19 @@
 import React from 'react'
-import { BaseProps } from '../../helper/base-props'
+import { BasePropsComponent } from '../../helper/base-props'
 import { combineCN } from '../../helper/combine-classname'
-import './footer.scss'
+import style from './footer.module.scss'
 
-interface Props extends BaseProps {
+interface Props extends BasePropsComponent {
 }
 
 const Footer: React.FC<Props> = React.memo((props) => {
-  return <div className={combineCN(props.className, "")}
-    id="footer"
+  return <footer className={combineCN(props.className, "")}
+    id={style.footer}
     style={props.style}
   >
 
     {props.children}
-  </div>
+  </footer>
 })
 
 export default Footer

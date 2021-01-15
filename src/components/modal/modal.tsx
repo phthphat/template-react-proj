@@ -1,23 +1,21 @@
 import React from 'react'
 import { createPortal } from 'react-dom'
-import { BaseProps } from '../../helper/base-props'
+import { BasePropsComponent } from '../../helper/base-props'
 import { combineCN } from '../../helper/combine-classname'
-import './modal.scss'
+import style from './modal.module.scss'
 
-interface Props extends BaseProps {
+interface Props extends BasePropsComponent {
   onRemove?: () => void
 }
 
 const Modal: React.FC<Props> = React.memo((props) => {
   return createPortal(
-    <div className={combineCN(props.className, "modal")}
-      id={props.id}
+    <div className={combineCN(props.className, style.modal)}
       style={props.style}
     >
-
       {props.children}
     </div>,
-    document.getElementById("wrap-popup")
+    document.getElementById("wrap-modal")
   )
 })
 

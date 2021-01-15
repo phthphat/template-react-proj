@@ -1,8 +1,8 @@
 import React from 'react'
-import { BaseProps } from '../../helper/base-props'
+import { BasePropsComponent } from '../../helper/base-props'
 import { combineCN } from '../../helper/combine-classname'
-import './button.scss'
-interface Props extends BaseProps {
+import style from './button.module.scss'
+interface Props extends BasePropsComponent {
   onClick?: () => void
 }
 
@@ -10,8 +10,7 @@ const Button: React.FC<Props> = React.memo((props) => {
   console.log("Button rendered")
 
   return <button
-    className={combineCN(props.className, "")}
-    id={props.id}
+    className={combineCN(props.className, style.button)}
     onClick={props.onClick}
     style={props.style}>
     Click me!

@@ -1,19 +1,15 @@
 import React from 'react'
-import { BaseProps } from '../../helper/base-props'
-import { combineCN } from '../../helper/combine-classname'
-import './about.css'
+import ArticleLayout from '../../components/layout/article-layout/article-layout'
+import { BasePropsComponent } from '../../helper/base-props'
+import style from './about.module.scss'
 
-interface Props extends BaseProps {
+interface Props extends BasePropsComponent {
 }
 
-const about: React.FC<Props> = React.memo((props) => {
-  return <div className={combineCN(props.className, "")}
-    id={props.id}
-    style={props.style}
-  >
-
-    {props.children}
-  </div>
+const About: React.FC<Props> = React.memo((props) => {
+  return <ArticleLayout id={style.about} title="About">
+    <h1>About</h1>
+  </ArticleLayout>
 })
 
-export default about
+export default About

@@ -1,5 +1,6 @@
 import React from 'react';
-import './not-found.css';
+import ArticleLayout from '../../components/layout/article-layout/article-layout';
+import style from './not-found.module.scss';
 
 interface Props {
 
@@ -7,8 +8,10 @@ interface Props {
 
 export const NotFound = (props: Props) => {
   return (
-    <div className="not-found">
-      <h1 className="page-title">404, not found</h1>
-    </div>
+    <ArticleLayout title="Not found">
+      <div id={style.notFound}>
+        <h1 className="page-title">404, not found</h1>
+      </div>
+    </ArticleLayout>
   );
 };
