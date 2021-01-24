@@ -3,11 +3,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import Footer from './components/footer/footer';
 import Nav from './components/nav/nav';
-import { getLocalStorage, setLocalStorage } from './helper/local-storage';
+import LocalStorage from './helper/local-storage';
 import About from './pages/about/about';
 import { Homepage } from './pages/homepage/homepage';
 import { NotFound } from './pages/not-found/not-found';
-import { cartState, themeState } from './state/user-state';
+import { CartItem, cartState, Theme, themeState } from './state/user-state';
 
 const App = () => {
 
@@ -15,18 +15,18 @@ const App = () => {
   let setCart = useSetRecoilState(cartState)
 
   useEffect(() => {
-    let curTheme = getLocalStorage("theme")
-    let curCart = getLocalStorage("cart")
+    let curTheme = LocalStorage.get<Theme>("theme");//getLocalStorage("theme")
+    let curCart = LocalStorage.get<CartItem[]>("cart");
 
     if (!curTheme) {
       curTheme = "light"
-      setLocalStorage("theme", "light")
+      LocalStorage.set("theme", "light")
     }
     setTheme(curTheme)
 
     if (!curCart) {
       curCart = []
-      setLocalStorage("cart", [])
+      LocalStorage.set("cart", [])
     }
     setCart(curCart)
 

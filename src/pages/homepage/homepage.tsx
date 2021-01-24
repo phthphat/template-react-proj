@@ -3,6 +3,7 @@ import { useSetRecoilState } from 'recoil'
 import Button from '../../components/button/button'
 import FullWidthLayout from '../../components/layout/fullwidth-layout/fullwidth-layout'
 import Modal from '../../components/modal/modal'
+import { useFetch } from '../../networking/api-hook/use-fetch'
 import { countState } from '../../state/user-state'
 import style from './homepage.module.scss'
 
@@ -13,7 +14,10 @@ export const Homepage = React.memo(() => {
   console.log("Homepage rendered")
   const setModal_Op = useCallback(() => setModal(val => !val), [setModal])
 
+  let { loading, data, errMsg } = useFetch("https://jsonplaceholder.typicode.com/todos/1?", { data: 2 }, "GET")
+
   return <FullWidthLayout id={style.homepage} title="Homepage">
+    <div>{loading ? "Loading" : "Done"} {JSON.stringify(data)} {errMsg}</div>
     <button onClick={setModal_Op}>Show modal</button>
     <h1>Hello world</h1>
     <Button onClick={() => { setCount(val => val + 1) }}>

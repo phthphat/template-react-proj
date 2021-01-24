@@ -1,0 +1,48 @@
+import { useEffect, useRef, useState } from "react"
+import { APIMethod, callAPI } from "../api-callable/api-callable"
+export class APIUrl {
+  static baseUrl = "https://google.com"
+  static withPath(path: string): string {
+    if (path.length === 0) return this.baseUrl
+    if (path.includes("http", 0)) return path
+    return this.baseUrl + (path[0] === "/" ? "" : "/") + path
+  }
+}
+export const useFetch = <T extends unknown>(pathUrl: string, data: any, method: APIMethod) => {
+  interface ResultType {
+    loading: boolean,
+    data: T,
+    errMsg: string
+  }
+  let isCurrent = useRef(true)
+  let [state, setState] = useState<ResultType>({ loading: true, data: null, errMsg: null })
+
+  useEffect(() => {
+    return () => {
+      isCurrent.current = false
+    }
+  })
+
+  useEffect(() => {
+    callAPI<T>(APIUrl.withPath(pathUrl), method, data)
+      .then(json => {
+        if (isCurrent.current) {
+          setState({
+            loading: false,
+            data: json,
+            errMsg: null
+          })
+        }
+      })
+      .catch(err => {
+        if (isCurrent.current) {
+          setState({
+            loading: false,
+            data: null,
+            errMsg: err
+          })
+        }
+      })
+  }, [data, method, pathUrl])
+  return state
+}
