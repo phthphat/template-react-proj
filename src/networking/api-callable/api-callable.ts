@@ -1,5 +1,5 @@
 export type APIMethod = "GET" | "POST" | "PUT" | "DELETE"
-export const callAPI = async <T extends unknown>(
+export const jsonFetch = async <T extends unknown>(
   url: string,
   method: APIMethod,
   data: any,

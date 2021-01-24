@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { APIMethod, callAPI } from "../api-callable/api-callable"
+import { APIMethod, jsonFetch } from "../api-callable/api-callable"
 export class APIUrl {
   static baseUrl = "https://google.com"
   static withPath(path: string): string {
@@ -8,23 +8,26 @@ export class APIUrl {
     return this.baseUrl + (path[0] === "/" ? "" : "/") + path
   }
 }
-export const useFetch = <T extends unknown>(pathUrl: string, data: any, method: APIMethod) => {
+export const useFetch = <T extends unknown>(
+  pathUrl: string, method: APIMethod, data: any = undefined,
+) => {
   interface ResultType {
     loading: boolean,
     data: T,
     errMsg: string
   }
   let isCurrent = useRef(true)
+  console.log(isCurrent.current)
   let [state, setState] = useState<ResultType>({ loading: true, data: null, errMsg: null })
 
   useEffect(() => {
     return () => {
       isCurrent.current = false
     }
-  })
+  }, [isCurrent])
 
   useEffect(() => {
-    callAPI<T>(APIUrl.withPath(pathUrl), method, data)
+    jsonFetch<T>(APIUrl.withPath(pathUrl), method, data)
       .then(json => {
         if (isCurrent.current) {
           setState({
