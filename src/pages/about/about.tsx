@@ -6,8 +6,7 @@ import style from './about.module.scss'
 
 const About = React.memo(() => {
   console.log("About render")
-  return <div>About</div>;
-  <ArticleLayout id={style.about} title="About">
+  return <ArticleLayout id={style.about} title="About">
     <h1>About</h1>
   </ArticleLayout>
 })
