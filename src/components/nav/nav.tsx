@@ -20,6 +20,7 @@ const Nav: React.FC<Props> = React.memo((props) => {
     {count}
     <Link to="/" className={style.item}>Home</Link>
     <Link to="/about" className={style.item}>About</Link>
+    <Link to="/callback-recoil" className={style.item}>CallbackRecoil</Link>
     {props.children}
   </nav>
 })

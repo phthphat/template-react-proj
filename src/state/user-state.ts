@@ -17,9 +17,9 @@ export interface UserInfo {
   name?: string
   token?: string
 }
-export const userInfoState = atom<UserInfo | null>({
+export const userInfoState = atom<UserInfo | undefined>({
   key: "USER_USERINFO",
-  default: null
+  default: undefined
 })
 
 export type CartItem = { id: string, quantity: number }

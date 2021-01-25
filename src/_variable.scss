@@ -1,5 +1,12 @@
 $white: rgb(245, 245, 245);
 $black: rgb(36, 36, 36);
+$footerHeight: 100px;
+$navHeight: 50px;
+
+//z-index
+$navZIndex: 1;
+$modalZIndex: 2;
+
 :root {
   --text-color: #{$black};
   --bg-color: #{$white};

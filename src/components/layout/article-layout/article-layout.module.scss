@@ -1,10 +1,14 @@
+@import "../../../variable";
+
 #articleLayout {
   width: 100%;
   padding: 10px;
-  .layout {
-    /* align-items: center; */
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-  }
+}
+
+.layout {
+  /* align-items: center; */
+  min-height: calc(100vh - #{$navHeight} - #{$footerHeight});
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
 }

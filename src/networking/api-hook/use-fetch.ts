@@ -17,7 +17,7 @@ export const useFetch = <T extends unknown>(
     errMsg: string
   }
   let isCurrent = useRef(true)
-  console.log(isCurrent.current)
+  // console.log(isCurrent.current)
   let [state, setState] = useState<ResultType>({ loading: true, data: null, errMsg: null })
 
   useEffect(() => {

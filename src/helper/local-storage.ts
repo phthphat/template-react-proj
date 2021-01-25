@@ -1,4 +1,4 @@
-export type LocalStorageKey = "theme" | "cart"
+export type LocalStorageKey = "theme" | "cart" | "token"
 export default class LocalStotage {
   static get<T extends unknown>(key: LocalStorageKey): T | undefined {
     let rawVal = localStorage[key]

@@ -4,6 +4,7 @@ import { combineCN } from '../../helper/combine-classname'
 import style from './button.module.scss'
 interface Props extends BasePropsComponent {
   onClick?: () => void
+  title?: string
 }
 
 const Button: React.FC<Props> = React.memo((props) => {
@@ -13,8 +14,7 @@ const Button: React.FC<Props> = React.memo((props) => {
     className={combineCN(props.className, style.button)}
     onClick={props.onClick}
     style={props.style}>
-    Click me!
-    {props.children}
+    {props.title ?? "Click me!"}
   </button>
 })
 
