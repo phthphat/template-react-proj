@@ -6,16 +6,15 @@ Work with Visual Studio Code
 
 ## Technology used
 
-- Latest ReactJS (17.x) + TypeScipt
-- Recoil (Experimental) to manage state
-- TailwindCSS
-- Framer-motion for React animation
+- Latest [React (17.x)](https://reactjs.org) + TypeScript
+- [Recoil (Experimental)](https://recoiljs.org) state management
+- [TailwindCSS](https://tailwindcss.com) and/or SCSS module
+- [Framer motion](https://www.framer.com/motion/) for React animation
 
 ## Visual Studio Code
 
 - Press `F5` / `Shift + F5` to debug / stop (using `yarn start`)
-- Code snippet to create page, component integrated
-
+- Using code snippet to create page, component integrated
 
 ## Available Scripts
 
