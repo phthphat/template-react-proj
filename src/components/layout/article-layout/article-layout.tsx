@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { BasePropsPage } from '../../../helper/base-props'
@@ -17,12 +18,17 @@ const ArticleLayout: React.FC<Props> = React.memo((props) => {
     <Helmet>
       <title>{props.title ?? "Page"} - {siteInfo.title}</title>
     </Helmet>
-    <main
+    <motion.main
       className={combineCN(style.layout, props.className)}
       id={props.id}
+
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+    // transition={{ duration: 0.1 }}
     >
       {props.children}
-    </main>
+    </motion.main>
   </div>
 })
 

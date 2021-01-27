@@ -1,3 +1,21 @@
 {
-  "title": "Sample"
+  "title": "Sample",
+  "nav-item": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "About",
+      "url": "/about"
+    },
+    {
+      "title": "CallbackRecoil",
+      "url": "/callback-recoil"
+    },
+    {
+      "title": "Tailwind",
+      "url": "/tailwind"
+    }
+  ]
 }

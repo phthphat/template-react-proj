@@ -1,30 +1,31 @@
+import { motion, AnimatePresence } from 'framer-motion'
 import React from 'react'
 import { createPortal } from 'react-dom'
-import { useSpring, animated } from 'react-spring'
 import { BasePropsComponent } from '../../helper/base-props'
 import { combineCN } from '../../helper/combine-classname'
 import style from './modal.module.scss'
 
 interface Props extends BasePropsComponent {
+  isShowing: boolean,
   onRemove?: () => void
 }
 
 const Modal: React.FC<Props> = React.memo((props) => {
-  let animateProps = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    config: { duration: 200, delay: 100 }
-  })
-  return createPortal(
-    <div className={combineCN(props.className, style.modal)}
-      style={props.style}
-    >
-      <animated.dialog style={animateProps}>
+  return <AnimatePresence>
+    {
+      props.isShowing && <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.1 }}
+
+        className={combineCN(props.className, style.modal)}
+        style={props.style}
+      >
         {props.children}
-      </animated.dialog>
-    </div>,
-    document.getElementById("wrap-modal")
-  )
+      </motion.div>
+    }
+  </AnimatePresence>
 })
 
 export default Modal

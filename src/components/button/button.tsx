@@ -11,7 +11,10 @@ const Button: React.FC<Props> = React.memo((props) => {
   console.log("Button rendered")
 
   return <button
-    className={combineCN(props.className, style.button)}
+    className={
+      combineCN(props.className, style.button,
+        "bg-gray-500 rounded-full text-white hover:bg-gray-400")
+    }
     onClick={props.onClick}
     style={props.style}>
     {props.title ?? "Click me!"}

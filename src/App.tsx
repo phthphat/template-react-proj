@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Switch, useLocation } from 'react-router-dom';
-import { useTransition, animated } from 'react-spring';
+import { Route, Switch } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import Footer from './components/footer/footer';
 import Nav from './components/nav/nav';
@@ -10,6 +9,7 @@ import About from './pages/about/about';
 import { Homepage } from './pages/homepage/homepage';
 import Login from './pages/login/login';
 import { NotFound } from './pages/not-found/not-found';
+import Tailwind from './pages/tailwind/tailwind';
 import CallBackRecoil from './pages/usecallback-recoil/callback-recoil';
 import { CartItem, cartState, Theme, themeState } from './state/user-state';
 
@@ -63,11 +63,11 @@ const App = () => {
       <Route exact path="/about" component={About} />
       <Route exact path="/callback-recoil" component={RequireLogined(CallBackRecoil)} />
       <Route exact path="/login" component={Login} />
+      <Route exact path="/tailwind" component={Tailwind} />
       <Route component={NotFound} />
     </Switch>
     <Footer />
   </>
-    ;
 }
 
 export default App;

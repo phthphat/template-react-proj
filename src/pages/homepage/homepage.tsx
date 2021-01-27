@@ -54,15 +54,13 @@ export const Homepage = React.memo(() => {
       }
     </div>
 
-    {
-      modal && <Modal>
-        <div style={{ padding: 10, width: 300, height: 300, justifyContent: 'space-between', backgroundColor: 'white' }}>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero blanditiis inventore labore?</p>
-          <button onClick={setModal_Op}>
-            Close
+    <Modal isShowing={modal}>
+      <div style={{ padding: 10, width: 300, height: 300, justifyContent: 'space-between', backgroundColor: 'white' }}>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero blanditiis inventore labore?</p>
+        <button onClick={setModal_Op}>
+          Close
           </button>
-        </div>
-      </Modal>
-    }
+      </div>
+    </Modal>
   </FullWidthLayout >
 })

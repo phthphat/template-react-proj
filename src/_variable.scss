@@ -7,14 +7,14 @@ $navHeight: 50px;
 $navZIndex: 1;
 $modalZIndex: 2;
 
-:root {
-  --text-color: #{$black};
-  --bg-color: #{$white};
-}
+// :root {
+//   --text-color: #{$black};
+//   --bg-color: #{$white};
+// }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-color: #{$white};
-    --bg-color: #{$black};
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --text-color: #{$white};
+//     --bg-color: #{$black};
+//   }
+// }
