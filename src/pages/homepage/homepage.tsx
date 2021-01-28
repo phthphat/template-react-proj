@@ -3,7 +3,8 @@ import { useSetRecoilState } from 'recoil'
 import Button from '../../components/button/button'
 import FullWidthLayout from '../../components/layout/fullwidth-layout/fullwidth-layout'
 import Modal from '../../components/modal/modal'
-import { useFetch } from '../../networking/api-hook/use-fetch'
+import { useFetch } from '../../hooks/use-fetch'
+import { useScrollPosition } from '../../hooks/use-scroll-position'
 import { countState } from '../../state/user-state'
 import style from './homepage.module.scss'
 
@@ -24,10 +25,13 @@ export const Homepage = React.memo(() => {
 
   let { loading, data, errMsg } = useFetch("https://jsonplaceholder.typicode.com/todos/1", "GET")
 
+  const { x, y } = useScrollPosition(150)
+
   return <FullWidthLayout id={style.homepage} title="Homepage">
     <div>{loading ? "Loading" : "Done"} {JSON.stringify(data)} {errMsg}</div>
     <button onClick={setModal_Op}>Show modal</button>
     <h1>Hello world</h1>
+    <div>{x} {y}</div>
     <Button onClick={setCount_Op}>
       Ahihi
     </Button>
