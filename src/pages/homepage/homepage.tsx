@@ -59,11 +59,13 @@ export const Homepage = React.memo(() => {
     </div>
 
     <Modal isShowing={modal}>
-      <div style={{ padding: 10, width: 300, height: 300, justifyContent: 'space-between', backgroundColor: 'white' }}>
+      <div
+        className="flex flex-col justify-between items-center rounded-sm"
+        style={{ padding: 10, width: 300, height: 300, justifyContent: 'space-between', backgroundColor: 'white' }}>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero blanditiis inventore labore?</p>
         <button onClick={setModal_Op}>
           Close
-          </button>
+         </button>
       </div>
     </Modal>
   </FullWidthLayout >

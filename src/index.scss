@@ -33,26 +33,20 @@ code {
 //   flex-shrink: 1;
 // }
 
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-// }
-
-// input,
-// button {
-//   outline: none;
-//   border: solid gray 1px;
-//   background-color: white;
-//   padding: 5px;
-//   border-radius: 5px;
-// }
-// button:active {
-//   color: white;
-// }
-// button:hover {
-//   background-color: rgb(221, 221, 221);
-// }
+input,
+button {
+  outline: none;
+  border: solid gray 1px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+button:active {
+  color: rgb(202, 202, 202);
+}
+button:hover {
+  background-color: rgb(221, 221, 221);
+}
 img {
   max-width: 100%;
   max-height: 100%;

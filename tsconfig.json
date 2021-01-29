@@ -22,7 +22,7 @@
   },
   "include": [
     "src"
-, "api-callable"  ],
+  ],
   "exclude": [
     "node_modules"
   ]

@@ -19,7 +19,8 @@ const Modal: React.FC<Props> = React.memo((props) => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.1 }}
 
-        className={combineCN(props.className, style.modal)}
+        className={combineCN(props.className, style.modal,
+          "flex flex-col")}
         style={props.style}
       >
         {props.children}

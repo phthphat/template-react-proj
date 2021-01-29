@@ -31,7 +31,7 @@
       "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g} = React.memo(() => {",
       "\tconsole.log(\"$TM_FILENAME_BASE rendered\")",
       "\t",
-      "\treturn <FullWidthLayout title=\"\">", 
+      "\treturn <FullWidthLayout title=\"Page\">", 
       "\t\t<div id={style.${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}>",
       "\t\t\t",
       "\t\t</div>",

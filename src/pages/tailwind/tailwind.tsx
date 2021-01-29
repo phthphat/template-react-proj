@@ -38,10 +38,10 @@ const Tailwind = React.memo(() => {
       style={{ height: 400 }}
     >
       <ListThumbnail data={data} handleClick={handleClick} />
-      <div className="w-full flex flex-col justify-between">
+      <div className="flex-auto flex flex-col justify-between">
         <Chatcontent />
         <div className="flex p-2 border border-gray-500 items-center justify-between">
-          <input className=" w-full mr-2 p-1 border border-gray-500 rounded-full" placeholder="Your message" />
+          <input className="flex flex-col w-full mr-2 px-2 py-0 border border-gray-500 rounded-full" placeholder="Your message" />
           <button className="bg-blue-500 w-6 h-6" />
         </div>
       </div>
