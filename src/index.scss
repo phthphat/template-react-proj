@@ -34,7 +34,8 @@ code {
 // }
 
 input,
-button {
+button,
+button:active {
   outline: none;
   border: solid gray 1px;
   background-color: white;
