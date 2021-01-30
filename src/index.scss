@@ -34,8 +34,7 @@ code {
 // }
 
 input,
-button,
-button:active {
+button {
   outline: none;
   border: solid gray 1px;
   background-color: white;
@@ -43,7 +42,11 @@ button:active {
   border-radius: 5px;
 }
 button:active {
+  outline: none;
   color: rgb(202, 202, 202);
+}
+button:focus {
+  outline: none;
 }
 button:hover {
   background-color: rgb(221, 221, 221);
