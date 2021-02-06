@@ -26,13 +26,13 @@
     "prefix": "ctp", //custom typescript page
     "body": [
       "import React from 'react'",
-      "import style from './$TM_FILENAME_BASE.module.scss'",
+      "//import style from './$TM_FILENAME_BASE.module.scss'",
       "",
       "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g} = React.memo(() => {",
       "\tconsole.log(\"$TM_FILENAME_BASE rendered\")",
       "\t",
       "\treturn <FullWidthLayout title=\"Page\">", 
-      "\t\t<div id={style.${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}>",
+      "\t\t<div id=\"$TM_FILENAME_BASE\">",
       "\t\t\t",
       "\t\t</div>",
       "\t</FullWidthLayout>",

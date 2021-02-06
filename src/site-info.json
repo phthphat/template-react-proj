@@ -16,6 +16,10 @@
     {
       "title": "Tailwind",
       "url": "/tailwind"
+    },
+    {
+      "title": "SignUp",
+      "url": "/sign-up"
     }
   ]
 }

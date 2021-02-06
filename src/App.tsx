@@ -9,6 +9,7 @@ import About from './pages/about/about';
 import { Homepage } from './pages/homepage/homepage';
 import Login from './pages/login/login';
 import { NotFound } from './pages/not-found/not-found';
+import Signup from './pages/signup/signup';
 import Tailwind from './pages/tailwind/tailwind';
 import CallBackRecoil from './pages/usecallback-recoil/callback-recoil';
 import { CartItem, cartState, Theme, themeState } from './state/user-state';
@@ -63,6 +64,7 @@ const App = () => {
       <Route exact path="/about" component={About} />
       <Route exact path="/callback-recoil" component={RequireLogined(CallBackRecoil)} />
       <Route exact path="/login" component={Login} />
+      <Route exact path="/sign-up" component={Signup} />
       <Route exact path="/tailwind" component={Tailwind} />
       <Route component={NotFound} />
     </Switch>
