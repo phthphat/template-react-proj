@@ -1,17 +1,5 @@
 @import "../../variable";
 #navBar {
-  background-color: yellow;
   height: $navHeight;
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100vw;
   z-index: $navZIndex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.item {
-  padding: 5px;
 }

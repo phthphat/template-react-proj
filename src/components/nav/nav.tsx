@@ -15,7 +15,7 @@ const Nav: React.FC<Props> = React.memo((props) => {
   let count = useRecoilValue(countState)
   console.log("Nav rendered")
   return <nav className={combineCN(props.className,
-    "flex")}
+    "sticky top-0 bg-white left-0 w-screen flex justify-between p-2 shadow-md items-center")}
     id={style.navBar}
     style={props.style}
   >
