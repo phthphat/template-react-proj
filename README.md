@@ -15,6 +15,14 @@ Work with Visual Studio Code
 
 - Press `F5` / `Shift + F5` to debug / stop (using `yarn start`)
 - Using code snippet to create page, component integrated
+- To create function component
+```
+ctfc
+```
+- To create page
+```
+ctp
+```
 
 ## Available Scripts
 
